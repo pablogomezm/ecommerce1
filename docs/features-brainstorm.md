@@ -1,5 +1,3 @@
-- quizas aprender primero la nocion de diferentes pantallas y navegacion entre ellas, parece ser un concepto muy fundamental
-
 - veo que en flutter sidebar hay una seccion flutter property editor, me pregunto se sera buena practica y popular usar los botones de esa interfaz para insertar/wrap widget, padding, container, column, row, etc o si lo mas popular es escribir el codigo a mano
 
 - me pregunto como lo haran los devs profesionales de flutter para inspeccionar los componentes mientras ven la app en emulador, como ven el espacio y boxes de cada componente, spacing, padding, margin, etc

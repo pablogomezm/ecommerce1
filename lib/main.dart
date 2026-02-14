@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screen_a.dart';
+import 'router.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,8 +10,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ScreenA(),
+    return MaterialApp.router(
+      routerConfig: router,
     );
   }
 }

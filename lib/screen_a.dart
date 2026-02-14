@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screen_b.dart';
+import 'package:go_router/go_router.dart';
 
 class ScreenA extends StatelessWidget {
   const ScreenA({super.key});
@@ -13,12 +13,7 @@ class ScreenA extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ScreenB(),
-              ),
-            );
+            context.push('/b');
           },
           child: const Text('Ir a Pantalla B'),
         ),

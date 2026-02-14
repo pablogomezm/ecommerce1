@@ -5,7 +5,8 @@ Estoy usando macos con chip apple.
 # Objetivo
 
 El objetivo es aprender, por eso el énfasis debe ser didáctico y sobre todo gradual.
-Lo que busco no son respuestas del tipo "para lograr esto hay que editar estos archivos y ya", sino construir un marco mental en torno a cada concepto y siempre buscando un equilibrio entre incluir ejemplos mínimos (bueno para entender el concepto de manera aislada y simple) y teniendo en la mira cómo lo hacen los devs actualmente de manera moderna y profesional. 
+Lo que busco no son respuestas del tipo "para lograr esto hay que editar estos archivos y ya", sino construir un marco mental en torno a cada concepto y siempre buscando un equilibrio entre incluir ejemplos mínimos (bueno para entender el concepto de manera aislada y simple) y teniendo en la mira cómo lo hacen los devs actualmente de manera moderna y profesional.
+Tengo backround y conocimiento en desarrollo web con React, NextJS, NodeJS, NestJS, Tailwind, Shadcn, PostgreSQL, Prisma.
 
 # Cómo enseñar cada concepto nuevo
 
@@ -32,6 +33,10 @@ Si un ejemplo usa un widget o concepto por primera vez (ej: MaterialApp, Scaffol
 - Un concepto a la vez, sin mezclar aprendizaje fundamental con features específicas del proyecto
 - Está bien usar ejemplos artificiales/mínimos para aislar el concepto primero
 
-## 5. Sugerir librerías proactivamente
+## 5. Explicaciones en la conversación, no en el código
+
+Las explicaciones didácticas van en la conversación, no como comentarios en el código. Los comentarios en código solo se justifican cuando aportan valor a un dev que lee el código sin contexto de la conversación (ej: un "por qué" no obvio). No usar comentarios para explicar "qué hace" algo que se entiende leyendo el código.
+
+## 6. Sugerir librerías proactivamente
 
 Si existe una librería popular y profesional para lo que se está haciendo (ej: go_router para navegación), mencionarla desde el principio como parte del panorama (punto 1), no esperar a que el usuario pregunte.

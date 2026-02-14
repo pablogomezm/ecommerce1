@@ -2,6 +2,8 @@
 
 - me pregunto como lo haran los devs profesionales de flutter para inspeccionar los componentes mientras ven la app en emulador, como ven el espacio y boxes de cada componente, spacing, padding, margin, etc
 
+- no se como se manejar estado en flutter, existe manejo de estado sin base de datos? cuando es necesario tener una base de datos local?
+
 - me pregunto como lo haran los devs profesionales de flutter para abordar el tema de diferentes tamaños de pantalla, quizas prueban en 2 tamaños, ya que tipicamente estan los telefonos pequeños estilo iphone no max y los grandes estilo iphone pro max, quizas usan alguna herramienta para poder ver en paralelo como se ve el tamaño normal y el tamaño max y con eso esta todo cubierto, o quizas desarrollan para un solo tamaño tipo iphone no max y asumen que en tamaño max se ve bien por escalado automatico
 
 - que la primera vista que se vea sea una vista de catalogo, el catalogo seria un grid de 2 items por fila, cada producto es una card con una imagen, titulo, precio final descontado, precio original previo a descuentos (tachado), precio por litro, boton "-" "+" para quitar y agregar cantidad, cantidad que por defecto es 1, boton agregar con icono de carrito, click en la card lleva a pantalla de detalle de producto

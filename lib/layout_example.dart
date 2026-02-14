@@ -14,7 +14,7 @@ class LayoutExample extends StatelessWidget {
           children: [
             const Text('Hola'),
 
-            // Row con dos cajas de tamaño fijo
+            // Row with two fixed-size boxes
             Row(
               children: [
                 Container(
@@ -39,7 +39,7 @@ class LayoutExample extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Row con Expanded: cada hijo ocupa la mitad del espacio
+            // Row with Expanded: each child takes half the space
             Row(
               children: [
                 Expanded(
@@ -67,7 +67,7 @@ class LayoutExample extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Row mixta: una caja fija + una que ocupa el resto
+            // Mixed row: one fixed box + one that takes the remaining space
             Row(
               children: [
                 Container(
@@ -91,7 +91,7 @@ class LayoutExample extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // Ejemplo de Container con decoración
+            // Container with decoration example
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(16),

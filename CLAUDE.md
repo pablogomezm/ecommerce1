@@ -1,4 +1,5 @@
 Este es un proyecto Flutter para iOS y Android.
+A grandes rasgos la idea es que sea un ecommerce de bebidas inspirado en la web de Coca Cola
 Fue creado con el template empty (hello world simple).
 Estoy usando macos con chip apple.
 
@@ -41,6 +42,12 @@ Las explicaciones didácticas van en la conversación, no como comentarios en el
 ## 6. Sugerir librerías proactivamente
 
 Si existe una librería popular y profesional para lo que se está haciendo (ej: go_router para navegación), mencionarla desde el principio como parte del panorama (punto 1), no esperar a que el usuario pregunte.
+
+# Estructura de proyecto
+
+- `lib/models/` para clases de datos (ej: `Product`).
+- `lib/screens/` para pantallas completas (ej: `CatalogScreen`, `ProductDetailScreen`).
+- `lib/widgets/` para widgets reutilizables (ej: `ProductCard`).
 
 # Documentación de aprendizaje (carpeta docs/)
 

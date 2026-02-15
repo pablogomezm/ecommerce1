@@ -1,3 +1,5 @@
+- aprender a hacer stateful widgets, en que caso es necesario usar stateful en vez de stateless, ojala aprender stateful widgets al mismo tiempo que se aplica a alguna feature que sea relevante para el proyecto
+
 - veo que en flutter sidebar hay una seccion flutter property editor, me pregunto se sera buena practica y popular usar los botones de esa interfaz para insertar/wrap widget, padding, container, column, row, etc o si lo mas popular es escribir el codigo a mano
 
 - me pregunto como lo haran los devs profesionales de flutter para inspeccionar los componentes mientras ven la app en emulador, como ven el espacio y boxes de cada componente, spacing, padding, margin, etc

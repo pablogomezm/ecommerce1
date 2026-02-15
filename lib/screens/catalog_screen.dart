@@ -17,7 +17,7 @@ class CatalogScreen extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 12,
           mainAxisSpacing: 12,
-          childAspectRatio: 0.59,
+          childAspectRatio: 0.55,
         ),
         itemCount: mockProducts.length,
         itemBuilder: (context, index) {

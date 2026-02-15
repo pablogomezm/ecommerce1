@@ -13,21 +13,12 @@ class ProductCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Product image placeholder
+          // Product image
           AspectRatio(
             aspectRatio: 1,
-            child: Container(
-              color: product.color,
-              child: Center(
-                child: Text(
-                  product.name.split(' ').first,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+            child: Image.asset(
+              product.imagePath,
+              fit: BoxFit.cover,
             ),
           ),
 

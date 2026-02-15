@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
-
 class Product {
   final String id;
   final String name;
   final int originalPrice;
   final int finalPrice;
   final int pricePerLiter;
-  final Color color;
+  final String imagePath;
 
   const Product({
     required this.id,
@@ -14,57 +12,57 @@ class Product {
     required this.originalPrice,
     required this.finalPrice,
     required this.pricePerLiter,
-    required this.color,
+    required this.imagePath,
   });
 }
 
 final mockProducts = [
   const Product(
     id: '1',
-    name: 'Coca-Cola Original 1.5L',
-    originalPrice: 2490,
-    finalPrice: 1990,
-    pricePerLiter: 1327,
-    color: Color(0xFFDC2626),
+    name: 'Coca-Cola Original 1.0lt',
+    originalPrice: 1490,
+    finalPrice: 1190,
+    pricePerLiter: 1190,
+    imagePath: 'assets/images/coca-cola-original-1-0-lt.png',
   ),
   const Product(
     id: '2',
-    name: 'Coca-Cola Zero 1.5L',
-    originalPrice: 2490,
-    finalPrice: 1890,
-    pricePerLiter: 1260,
-    color: Color(0xFF111111),
+    name: 'Coca-Cola Zero 3.0 lt',
+    originalPrice: 2990,
+    finalPrice: 2690,
+    pricePerLiter: 897,
+    imagePath: 'assets/images/coca-cola-zero-3-0-lt.png',
   ),
   const Product(
     id: '3',
-    name: 'Fanta Naranja 1.5L',
-    originalPrice: 2290,
+    name: 'Fanta Naranja 1.5 lt',
+    originalPrice: 2190,
     finalPrice: 1790,
     pricePerLiter: 1193,
-    color: Color(0xFFF97316),
+    imagePath: 'assets/images/fanta-1-5-lt.png',
   ),
   const Product(
     id: '4',
-    name: 'Sprite 1.5L',
-    originalPrice: 2290,
+    name: 'Sprite Sin Azucar 1.5 lt',
+    originalPrice: 2190,
     finalPrice: 1790,
     pricePerLiter: 1193,
-    color: Color(0xFF16A34A),
+    imagePath: 'assets/images/sprite-1-5-lt.png',
   ),
   const Product(
     id: '5',
-    name: 'Coca-Cola Light 1.5L',
-    originalPrice: 2490,
-    finalPrice: 1990,
-    pricePerLiter: 1327,
-    color: Color(0xFF9CA3AF),
+    name: 'Schweppes Tónica Regular 1.5 lt',
+    originalPrice: 2190,
+    finalPrice: 1790,
+    pricePerLiter: 1193,
+    imagePath: 'assets/images/schweppes-tonica-1-5-lt.png',
   ),
   const Product(
     id: '6',
-    name: 'Ades Soja Naranja 1L',
-    originalPrice: 1890,
-    finalPrice: 1490,
-    pricePerLiter: 1490,
-    color: Color(0xFFFBBF24),
+    name: 'Inca Kola Sin Azucar 1.5 lt',
+    originalPrice: 2190,
+    finalPrice: 1790,
+    pricePerLiter: 1193,
+    imagePath: 'assets/images/inca-kola-sin-azucar-1-5-lt.png',
   ),
 ];

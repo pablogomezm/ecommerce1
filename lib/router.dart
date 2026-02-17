@@ -1,16 +1,18 @@
 import 'package:go_router/go_router.dart';
-import 'screen_a.dart';
-import 'screen_b.dart';
+import 'screens/catalog_screen.dart';
+import 'screens/product_detail_screen.dart';
 
 final router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const ScreenA(),
+      builder: (context, state) => const CatalogScreen(),
     ),
     GoRoute(
-      path: '/b',
-      builder: (context, state) => const ScreenB(),
+      path: '/product/:id',
+      builder: (context, state) => ProductDetailScreen(
+        productId: state.pathParameters['id']!,
+      ),
     ),
   ],
 );

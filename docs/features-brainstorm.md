@@ -1,6 +1,23 @@
+- aprender a hacer stateful widgets, en que caso es necesario usar stateful en vez de stateless, ojala aprender stateful widgets al mismo tiempo que se aplica a alguna feature que sea relevante para el proyecto
+
+- diferencia entre return Row() y return const Row()
+
+- que version de Material Design usa este proyecto? es la mas reciente?
+
+- aprender a usar profile mode para inspeccionar la app mientras esta corriendo en el emulador, ver el arbol de widgets, ver el render tree, ver el performance, etc
+
+- Encontre este gotcha:
+Scaffold( body: GridView funciona bien
+pero wrappear GridView en un Column da error
+solucion es wrappear GridView con Expanded
+o sea Scaffold( body: Column( children: [ Expanded( child: GridView
+
+
 - veo que en flutter sidebar hay una seccion flutter property editor, me pregunto se sera buena practica y popular usar los botones de esa interfaz para insertar/wrap widget, padding, container, column, row, etc o si lo mas popular es escribir el codigo a mano
 
 - me pregunto como lo haran los devs profesionales de flutter para inspeccionar los componentes mientras ven la app en emulador, como ven el espacio y boxes de cada componente, spacing, padding, margin, etc
+
+- no se como se manejar estado en flutter, existe manejo de estado sin base de datos? cuando es necesario tener una base de datos local?. state management con Riverpod, Bloc, o Provider.
 
 - me pregunto como lo haran los devs profesionales de flutter para abordar el tema de diferentes tamaños de pantalla, quizas prueban en 2 tamaños, ya que tipicamente estan los telefonos pequeños estilo iphone no max y los grandes estilo iphone pro max, quizas usan alguna herramienta para poder ver en paralelo como se ve el tamaño normal y el tamaño max y con eso esta todo cubierto, o quizas desarrollan para un solo tamaño tipo iphone no max y asumen que en tamaño max se ve bien por escalado automatico
 

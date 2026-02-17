@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../models/product.dart';
+import 'quantity_selector.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -76,17 +77,22 @@ class ProductCard extends StatelessWidget {
 
             const Spacer(),
 
-            // Add to cart button
             Padding(
               padding: const EdgeInsets.all(8),
-              child: SizedBox(
-                width: double.infinity,
-                height: 36,
-                child: FilledButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.add_shopping_cart, size: 18),
-                  label: const Text('Agregar', style: TextStyle(fontSize: 13)),
-                ),
+              child: Row(
+                children: [
+                  const QuantitySelector(size: 28),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: SizedBox(
+                      height: 36,
+                      child: IconButton.filled(
+                        onPressed: () {},
+                        icon: const Icon(Icons.add_shopping_cart, size: 18),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

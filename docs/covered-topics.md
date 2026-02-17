@@ -45,4 +45,27 @@
 - **Constructores sin cuerpo**: cuando solo asignan parámetros a campos, se cierran con `;` sin `{}`. Dart asigna automáticamente con `this.param`. Si necesitas lógica extra, usas cuerpo con `{}` pero pierdes `const`.
 - **Named parameters**: los `{}` en la firma del constructor indican parámetros con nombre. Convención universal en widgets Flutter. Equivale a desestructurar un objeto en JS.
 - **`const` constructors**: permiten crear objetos en tiempo de compilación. Requieren que todos los campos sean `final` y que el constructor no tenga cuerpo.
+- **Constructor vacío implícito**: si una clase no recibe parámetros ni hace nada en el constructor, Dart genera uno vacío automáticamente. No es necesario declararlo.
+- **Guion bajo `_` = privado**: en Dart, el prefijo `_` hace que una clase, variable o método sea privado (solo visible dentro del archivo).
 
+## StatefulWidget
+
+- **Cuándo usar StatefulWidget vs StatelessWidget**: si el widget necesita "recordar" algo que cambia y re-dibujarse cuando cambia → StatefulWidget. Si solo muestra datos que le llegan por constructor → StatelessWidget. Equivale a un componente React con `useState` vs uno sin estado.
+- **Anatomía**: se compone de dos clases. La clase del widget (`extends StatefulWidget`) es inmutable y solo crea el State. La clase del estado (`extends State<MiWidget>`) contiene las variables mutables y el método `build`. Dos clases porque Flutter puede destruir/recrear el widget durante rebuilds, pero el State persiste.
+- **`setState`**: es obligatorio para notificar a Flutter que el estado cambió y debe re-llamar `build`. Sin `setState`, la variable cambia pero la UI no se actualiza. Equivale a `setState` de React (o el setter de `useState`).
+- **`widget.xxx`**: desde el State, se accede a las propiedades del StatefulWidget padre a través de `widget`. Es como acceder a props desde dentro del estado.
+- **`super.key`**: en widgets públicos se incluye para que consumidores externos puedan pasar un key. En widgets privados (`_MiWidget`) que nunca reciben key, el linter pide omitirlo.
+- **StatefulWidget es para estado local**. Para estado compartido entre widgets no relacionados (ej: carrito de compras) se usan soluciones de state management (Riverpod, Bloc, Provider) — tema por cubrir.
+
+## Gotchas de layout
+
+- **Widgets scrolleables dentro de Column**: `GridView`/`ListView` dentro de un `Column` necesitan `Expanded` para recibir altura finita. Sin eso, ambos intentan ser infinitamente altos y Flutter crashea. `Column` da altura ilimitada a sus hijos, y los scrolleables intentan expandirse infinito.
+
+## DevTools y debugging visual
+
+- **Flutter DevTools**: herramienta de inspección equivalente (parcial) al inspector web de Chrome. Se abre desde VSCode con Cmd+Shift+P → "Flutter: Open DevTools" o "Dart: Open DevTools". La app debe estar corriendo en debug mode.
+- **Widget Inspector / Select Widget Mode**: permite tocar un elemento en el simulador para ver qué widget es, en qué archivo está, y su árbol de padres/hijos.
+- **Show Implementation Widgets**: por defecto el inspector solo muestra tus widgets. Activando esta opción se revelan los widgets internos del framework (Padding, ConstrainedBox, etc. generados por widgets de Material). Equivale a ver el Shadow DOM en web.
+- **Flex Explorer**: panel que aparece solo al seleccionar un Row/Column/Flex en el widget tree. Muestra visualmente cómo se distribuye el espacio entre hijos. No aparece para otros tipos de widget.
+- **Show Guidelines** (botón en DevTools): dibuja líneas guía sutiles entre widgets para verificar alineación. Más limpio que Debug Paint.
+- **Approach práctico para debugging de spacing**: (1) conocer defaults de Material (IconButton = 48x48 min con padding 8, ListTile = padding horizontal 16, etc.), (2) Flex Explorer sin implementation widgets para distribución en Row/Column, (3) Debug Paint para vista rápida, (4) `Container(color: Colors.red, child: ...)` temporal para ver espacio real de un widget (equivale a `border: 1px solid red` en CSS).

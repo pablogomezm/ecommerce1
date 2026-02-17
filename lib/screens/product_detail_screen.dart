@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/product.dart';
+import '../widgets/quantity_selector.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   final String productId;
@@ -64,14 +65,21 @@ class ProductDetailScreen extends StatelessWidget {
                     style: const TextStyle(fontSize: 13, color: Colors.grey),
                   ),
                   const SizedBox(height: 20),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 48,
-                    child: FilledButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(Icons.add_shopping_cart),
-                      label: const Text('Agregar al carro'),
-                    ),
+                  Row(
+                    children: [
+                      const QuantitySelector(size: 40),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: SizedBox(
+                          height: 48,
+                          child: FilledButton.icon(
+                            onPressed: () {},
+                            icon: const Icon(Icons.add_shopping_cart),
+                            label: const Text('Agregar al carro'),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 20),
                   Text(

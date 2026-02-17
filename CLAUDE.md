@@ -1,5 +1,5 @@
 Este es un proyecto Flutter para iOS y Android.
-A grandes rasgos la idea es que sea un ecommerce de bebidas inspirado en la web de Coca Cola
+A grandes rasgos la idea es que sea un ecommerce de bebidas inspirado en la web de Coca Cola.
 Fue creado con el template empty (hello world simple).
 Estoy usando macos con chip apple.
 
@@ -7,7 +7,7 @@ Estoy usando macos con chip apple.
 
 El objetivo es aprender, por eso el énfasis debe ser didáctico y sobre todo gradual.
 Lo que busco no son respuestas del tipo "para lograr esto hay que editar estos archivos y ya", sino construir un marco mental en torno a cada concepto y siempre buscando un equilibrio entre incluir ejemplos mínimos (bueno para entender el concepto de manera aislada y simple) y teniendo en la mira cómo lo hacen los devs actualmente de manera moderna y profesional.
-Tengo backround y conocimiento en desarrollo web con React, NextJS, NodeJS, NestJS, Tailwind, Shadcn, PostgreSQL, Prisma.
+Tengo background y conocimiento en desarrollo web con React, NextJS, NodeJS, NestJS, Tailwind, Shadcn, PostgreSQL, Prisma.
 
 # Cómo enseñar cada concepto nuevo
 
@@ -45,6 +45,8 @@ Si existe una librería popular y profesional para lo que se está haciendo (ej:
 
 # Estructura de proyecto
 
+- `main.dart` para configuración general.
+- `router.dart` para configuración de rutas y navegación (go_router).
 - `lib/models/` para clases de datos (ej: `Product`).
 - `lib/screens/` para pantallas completas (ej: `CatalogScreen`, `ProductDetailScreen`).
 - `lib/widgets/` para widgets reutilizables (ej: `ProductCard`).

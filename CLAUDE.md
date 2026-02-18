@@ -43,6 +43,15 @@ Las explicaciones didácticas van en la conversación, no como comentarios en el
 
 Si existe una librería popular y profesional para lo que se está haciendo (ej: go_router para navegación), mencionarla desde el principio como parte del panorama (punto 1), no esperar a que el usuario pregunte.
 
+## 7. Clasificar el ejemplo antes de implementarlo
+
+Definición de concepto: Cuando hablo de "forma profesional" me refiero a la forma en que los devs profesionales implementan ese concepto en proyectos reales hoy en día, usando las herramientas y librerías más relevantes, las mejores prácticas y organización de código para lograr un código más mantenible, escalable y alineado con el ecosistema actual.
+Al presentar un panorama, plan o esquema mental de implementación, siempre aclarar en cuál de estas categorías cae el ejemplo que se va a implementar:
+
+- **Nativo + es el estándar profesional**: lo que vamos a implementar con las herramientas ya disponibles ES la forma moderna y profesional. No hay mejor alternativa relevante.
+- **Nativo como paso intermedio**: lo que vamos a implementar es una versión simplificada para entender el concepto, pero NO es la forma profesional y moderna. Dejar claro qué se verá la forma profesional después. Por ejemplo ver un ejemplo mínimo de Navigator 1.0 para entender el concepto de navegación, y luego ver la implementación con go_router y su archivo aparte router.dart para que esté bien organizado.
+- **Directo a lo profesional**: no tiene sentido mostrar la forma nativa/básica porque la librería/herramienta/plataforma/método profesional es la única que hace sentido usar desde el principio.
+
 # Estructura de proyecto
 
 - `main.dart` para configuración general.

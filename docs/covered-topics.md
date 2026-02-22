@@ -61,6 +61,20 @@
 
 - **Widgets scrolleables dentro de Column**: `GridView`/`ListView` dentro de un `Column` necesitan `Expanded` para recibir altura finita. Sin eso, ambos intentan ser infinitamente altos y Flutter crashea. `Column` da altura ilimitada a sus hijos, y los scrolleables intentan expandirse infinito.
 
+## Push Notifications (Firebase Cloud Messaging)
+
+- **Arquitectura general**: App → Firebase Cloud Messaging (FCM) → APNs (iOS) / Android FCM → Dispositivo. FCM es la capa unificada cross-platform. Requiere: servidor/trigger que envía el mensaje, cuenta Firebase con el proyecto configurado, y el paquete `firebase_messaging` en Flutter.
+- **¿Se necesita backend propio?**: No necesariamente. Firebase Console permite enviar notificaciones manualmente. Para producción real, un backend llama a la FCM API enviando el token del dispositivo.
+- **Configuración Firebase**: Se usa `flutterfire configure` (FlutterFire CLI) para conectar el proyecto Flutter con Firebase. Genera `firebase_options.dart`, `google-services.json` (Android), `GoogleService-Info.plist` (iOS), y modifica archivos de build de Android/iOS.
+- **API keys públicas**: Las claves de Firebase en `google-services.json` y `GoogleService-Info.plist` son claves de cliente, diseñadas para ser públicas. La seguridad viene de Firebase Security Rules, no de ocultar las claves.
+- **Inicialización**: `Firebase.initializeApp()` debe llamarse en `main()` antes de `runApp()`, con `WidgetsFlutterBinding.ensureInitialized()` al inicio.
+- **FCM Token**: identificador único del dispositivo para recibir notificaciones. Se obtiene con `messaging.getToken()`. Requiere `messaging.requestPermission()` primero.
+- **iOS simulador**: No puede obtener APNS token (requiere dispositivo físico o entitlements especiales). Solución: guard con `defaultTargetPlatform == TargetPlatform.iOS` + `getAPNSToken() == null` para salir antes de `getToken()`.
+- **iOS deployment target**: `firebase_core` requiere iOS 15.0+. Se actualiza en `ios/Podfile` (`platform :ios, '15.0'`) y en los 3 lugares de `IPHONEOS_DEPLOYMENT_TARGET` en `ios/Runner.xcodeproj/project.pbxproj`.
+- **Background handler**: función top-level (no puede ser método de clase) decorada con `@pragma('vm:entry-point')` para que el compilador no la elimine. Se registra con `FirebaseMessaging.onBackgroundMessage(handler)`. Corre en un Dart isolate separado — no tiene acceso al estado ni UI de la app. Verificado: aparece `Background message: [title]` en logs al recibir notificación con app minimizada.
+- **Notification channels (Android)**: por defecto FCM crea un canal con importancia NORMAL (sin banner heads-up). Para banner/heads-up se necesita un canal con HIGH importance, creado programáticamente con `flutter_local_notifications` — tema para cubrir junto con el foreground handler.
+- **Dart isolates**: el background handler corre en un contexto completamente aislado. Por eso debe ser top-level y no puede tocar estado global ni UI.
+
 ## DevTools y debugging visual
 
 - **Flutter DevTools**: herramienta de inspección equivalente (parcial) al inspector web de Chrome. Se abre desde VSCode con Cmd+Shift+P → "Flutter: Open DevTools" o "Dart: Open DevTools". La app debe estar corriendo en debug mode.
